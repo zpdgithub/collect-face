@@ -1,3 +1,5 @@
+var date = new Date();
+var app_version = date.getTime();
 angular.module('app', [
         'ui.router'
     ])
@@ -8,7 +10,7 @@ angular.module('app', [
         $stateProvider
             .state('main', {
                 url: '/main?userid&cnname&gender', //由url传入id、name
-                templateUrl: 'tpl/main.html'
+                templateUrl: 'tpl/main.html?v=' + app_version
             });
     }])
     .controller('AppController', ['$rootScope', function ($rootScope) {
