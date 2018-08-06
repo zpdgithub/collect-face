@@ -7,7 +7,7 @@ angular.module('app', [
         $urlRouterProvider.otherwise('/main');
         $stateProvider
             .state('main', {
-                url: '/main?userid&cnname&gender',  //由url传入id、name
+                url: '/main?userid&cnname&gender', //由url传入id、name
                 templateUrl: 'tpl/main.html'
             });
     }])
@@ -23,6 +23,13 @@ angular.module('app', [
         $rootScope.toUrl = '#'; //确认后，跳转的页面
         $rootScope.showModal = false;
         $rootScope.message = '';
+        $rootScope.genders = [{
+            id: '0',
+            name: '女'
+        }, {
+            id: '1',
+            name: '男'
+        }];
     }])
     .controller('MainController', ['$rootScope', '$scope', '$stateParams', '$http', '$timeout', function ($rootScope, $scope, $stateParams, $http, $timeout) {
         function loadCollection() {
