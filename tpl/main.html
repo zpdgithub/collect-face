@@ -3,15 +3,21 @@
         <div class="info">
             <table>
                 <tr>
-                    <td class="title">用户名：</td>
+                    <td class="title">姓名：</td>
                     <td class="content">
-                        <input type="text" ng-model="account">
+                        <input type="text" ng-model="cnname">
                     </td>
                 </tr>
                 <tr>
-                    <td class="title">姓名：</td>
+                    <td class="title">ID：</td>
                     <td class="content">
-                        <input type="text" ng-model="name">
+                        <input type="text" ng-model="userid">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">性别：</td>
+                    <td class="content">
+                        <input type="text" ng-model="gender">
                     </td>
                 </tr>
             </table>
@@ -23,9 +29,9 @@
         <div class="wrap">
             <img ng-src="{{photoUrl}}" alt="" />
         </div>
-        <div class="name" ng-bind="name"></div>
-        <div class="greet">欢迎您!</div>
-        <div class="msg">若不能识别您，请重新上传头像!</div>
+        <div class="name" ng-bind="cnname"></div>
+        <div class="greet">上传成功!</div>
+        <div class="msg">若有问题，请联系管理员!</div>
     </div>
 
     <div class="footer">
@@ -35,9 +41,9 @@
                 <button class="mm_bg" ng-show="isToConfirm">重新采集</button>
                 <input type="file" id="cameraInput" accept="image/*" />
             </div>
-            <div class="item" ng-show="isToConfirm">
+            <!-- <div class="item" ng-show="isToConfirm">
                 <button ng-click="confirm();">确定</button>
-            </div>
+            </div> -->
         </div>
     </div>
 </div>

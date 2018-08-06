@@ -7,15 +7,15 @@ angular.module('app', [
         $urlRouterProvider.otherwise('/main');
         $stateProvider
             .state('main', {
-                url: '/main?account&name',  //由url传入account、name
+                url: '/main?userid&cnname&gender',  //由url传入id、name
                 templateUrl: 'tpl/main.html'
             });
     }])
     .controller('AppController', ['$rootScope', function ($rootScope) {
         $rootScope.apiUrl = '/api/upload'; //采集图片api
         // request: {
-        //     account: 'zhangsan',
-        //     name: '张三'
+        //     userid: 'zhangsan',
+        //     base64Img: 9j/4AAQSkZJRgABAQAA...    //图像数据
         // }
         // response:{
         //     photoUrl: 'http://xxx'
@@ -123,6 +123,7 @@ angular.module('app', [
                         $rootScope.message = e;
                         $timeout(function () {
                             $rootScope.showModal = false;
+                            // $scope.isToConfirm = true;
                         }, 1000);
                     });
                 };
@@ -155,7 +156,8 @@ angular.module('app', [
         };
 
         $scope.isToConfirm = false;
-        $scope.account = $stateParams.account;
-        $scope.name = $stateParams.name;
+        $scope.userid = $stateParams.userid;
+        $scope.cnname = $stateParams.cnname;
+        $scope.gender = $stateParams.gender;
         loadCollection();
     }]);
