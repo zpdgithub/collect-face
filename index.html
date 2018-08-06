@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>collect face</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body ng-controller="AppController">
+    <div ui-view></div>
+    <div class="modal" ng-show="showModal" ng-bind="message"></div>
+</body>
+<script src="js/angular.min.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/exif.js"></script>
+<script src="js/main.js"></script>
+
+</html>

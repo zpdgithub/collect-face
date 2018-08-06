@@ -1,0 +1,43 @@
+<div ng-controller="MainController">
+    <div class="collect-page" ng-hide="isToConfirm">
+        <div class="info">
+            <table>
+                <tr>
+                    <td class="title">用户名：</td>
+                    <td class="content">
+                        <input type="text" ng-model="account">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="title">姓名：</td>
+                    <td class="content">
+                        <input type="text" ng-model="name">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <img class="example" src="img/cj.png" alt="">
+    </div>
+
+    <div class="confirm-page" ng-show="isToConfirm">
+        <div class="wrap">
+            <img ng-src="{{photoUrl}}" alt="" />
+        </div>
+        <div class="name" ng-bind="name"></div>
+        <div class="greet">欢迎您!</div>
+        <div class="msg">若不能识别您，请重新上传头像!</div>
+    </div>
+
+    <div class="footer">
+        <div class="btns">
+            <div class="item">
+                <button ng-hide="isToConfirm">开始采集</button>
+                <button class="mm_bg" ng-show="isToConfirm">重新采集</button>
+                <input type="file" id="cameraInput" accept="image/*" />
+            </div>
+            <div class="item" ng-show="isToConfirm">
+                <button ng-click="confirm();">确定</button>
+            </div>
+        </div>
+    </div>
+</div>
