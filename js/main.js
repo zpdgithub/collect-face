@@ -119,7 +119,7 @@ angular.module('app', [
                         console.log(response);
                         $rootScope.showModal = true;
                         $rootScope.message = '照片上传成功';
-                        $scope.photoUrl = response.data.photoUrl;
+                        // $scope.photoUrl = response.data.photoUrl;
                         $timeout(function () {
                             $rootScope.showModal = false;
                             $scope.isToConfirm = true;
@@ -136,6 +136,7 @@ angular.module('app', [
                 };
 
                 img.src = res;
+                $scope.photoUrl = res;
             };
             document.getElementById('cameraInput').addEventListener('change', function () {
                 if (this.files.length > 0) {
